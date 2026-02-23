@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parkolóház Díjszámító</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="https://img.icons8.com/color/96/000000/parking.png" alt="Parkolóház logó" class="logo">
+            <h1>Parkolóház Díjszámító</h1>
+        </header>
+
+        <form id="parkingForm">
+            <div class="form-group">
+                <label for="zone">Parkolási zóna:</label>
+                <select id="zone" required>
+                    <option value="">Válassz zónát</option>
+                    <option value="A">A zóna (500 Ft/óra)</option>
+                    <option value="B">B zóna (800 Ft/óra)</option>
+                    <option value="C">C zóna (1200 Ft/óra)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="vehicle">Jármű típusa:</label>
+                <select id="vehicle" required>
+                    <option value="">Válassz típust</option>
+                    <option value="car">Személyautó (1x díj)</option>
+                    <option value="truck">Teherautó (1.5x díj)</option>
+                    <option value="minibus">Kisbusz (2x díj)</option>
+                </select>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="hours">Óra:</label>
+                    <input type="number" id="hours" min="0" max="24" value="0">
+                </div>
+                <div class="form-group">
+                    <label for="minutes">Perc:</label>
+                    <input type="number" id="minutes" min="0" max="59" value="0">
+                </div>
+            </div>
+
+            <div class="form-group checkbox-group">
+                <label>
+                    <input type="checkbox" id="subscriber"> Bérletes vagyok (20% kedvezmény)
+                </label>
+            </div>
+
+            <button type="submit">Díjszámítás</button>
+        </form>
+
+        <div id="result" class="result hidden">
+            <h2>Eredmény</h2>
+            <div id="resultDetails"></div>
+            <div class="total">Fizetendő összeg: <span id="totalAmount">0 Ft</span></div>
+            <button id="printBtn" class="print-btn">Parkolójegy nyomtatása</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
